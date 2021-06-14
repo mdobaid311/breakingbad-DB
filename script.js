@@ -4,9 +4,8 @@ const record = document.getElementById("no-record");
 async function getCharacters(url) {
   const res = await fetch(url);
   const data = await res.json();
-  if (data.length > 0 && !searchBtn.value === "") {
+  if (data.length > 0 && searchBtn.value) {
     record.style.display = "none";
-
     showCharacters(data);
   } else {
     main.innerHTML = "";
